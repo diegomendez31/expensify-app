@@ -18,6 +18,18 @@ export const addExpense = (
         createAt
     }
 });
+
+export const startAddExpense = (expenseData = {}) => {
+    return (dispatch) => {
+        const {
+            description = '', 
+            note='', 
+            amount=0, 
+            createAt=0
+        } = expenseData;
+    };
+};
+
 // REMOVE_EXPENSE (This is action)
 export const removeExpense = ({ id }={}) => ({
     type: 'REMOVE_EXPENSE',

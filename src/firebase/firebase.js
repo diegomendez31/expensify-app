@@ -11,7 +11,56 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
 const database = firebase.database();
-database.ref().set({
-  name: "Diego Mendez"
-});
+
+export {firebase, database as default};
+
+
+// // child_removed
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// //child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// //child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// database.ref('expenses')
+//   .on('value', (snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+//     console.log(expenses);
+//   });
+
+// database.ref('expenses').push({
+//   description: 'rent',
+//   note: '',
+//   amount: 109500,
+//   createdAt: 23423423432
+// });
+
+// database.ref('expenses').push({
+//   description: 'phone',
+//   note: '',
+//   amount: 5900,
+//   createdAt: 23423423432
+// });
+
+// database.ref('expenses').push({
+//   description: 'food',
+//   note: '',
+//   amount: 109500,
+//   createdAt: 23423423432
+// });
